@@ -1,0 +1,45 @@
+PROMPT:
+
+Using the available functions listed below and any opencv functions, write code to perform the following user instruction on an image: 
+
+### Edit this instruction per image task ###
+"Remove the flowerpot. Take this image as structure reference and convert it into a modern looking dining room. Then write write "Welcome to AGI House” on the top of the image in large font"
+
+Here are the functions available to be used, along with their doctrings. Expect the input image to be available as './images/input_image.jpg'. Add a line 'from functions import *' in the imports. Also write a short step by step workflow you followed to perform the user instruction
+
+INPAINTING(image_path, prompt, mask_path):
+    """
+   Inpaint the masked part of an image according to a prompt. Be precise and only specify the object to be masked in the prompt, using only 1-2 words. This function could also be used to remove objects by specifying empty prompt string.
+    Args:
+        image_path (str): Path to the input image file.
+        prompt (str): Text prompt describing the desired inpainting.
+        mask_path (str): Path to the mask image file.
+    Returns:
+        bytes: The generated image data if the request is successful.
+        None: If the request fails, returns None and prints an error message.
+    """
+
+CONTROLNET(image_path, prompt, controlnet_type):
+    """
+    Generates an image based on the given prompt and controlnet type. The "depth", "canny" and "pose" controlnets would use the depth map, canny edge map and openpose of the input image as reference while generating the output. The "tile" controlnet upscales the image.
+    Args:
+        image_path (str): The path to the input image.
+        prompt (str): The text prompt to guide the image generation.
+        controlnet_type (str): The type of controlnet to use. Must be one of ["canny", "depth", "pose", "tile"].
+    Returns:
+        bytes: The generated image data if the request is successful.
+        None: If the request fails, returns None and prints the error message.
+    """
+
+GSAM(image_path, prompt):
+    """
+    Takes in an image and a prompt that tells what to segment or mask in the image, and return the corresponding binary mask output. 
+    Stores the mask as 'output_mask.png' in the current directory, which can be further used for further tasks.
+
+    Args:
+        image_path (str): The file path to the input image.
+        prompt (str): The prompt that tells what to mask out in the image.
+
+    Returns:
+        None
+ """

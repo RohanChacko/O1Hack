@@ -1,16 +1,10 @@
 import streamlit as st
 import numpy as np
-import time
+import os
 from PIL import Image
 
-st.title("Photoshop ka bap")
+st.title("Free-form photoshop")
 
-# Text input for chat
-user_input = st.text_input("You: ", "")
-
-# Display the user input
-if user_input:
-    st.write("You: " + user_input)
 
 # File uploader for image
 uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "jpeg", "png"])
@@ -19,5 +13,22 @@ uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "jpeg", "png
 if uploaded_file is not None:
     image = st.image(uploaded_file, caption="Uploaded Image.", use_column_width=True)
     image_array = np.array(Image.open(uploaded_file))
+
+st.subheader("Image Gallery")
+
+# Placeholder for the gallery
+gallery_placeholder = st.empty()
+
+gallery_images = []
+for filename in os.listdir("./working_examples/"):
+    image_path = os.path.join("./working_examples/", filename)
+    gallery_images.append(np.array(Image.open(image_path)))
+
+# Display the gallery
+cols = st.columns(len(gallery_images))
+for idx, col in enumerate(cols):
+    with col:
+        st.image(gallery_images[idx], use_column_width=True)
+
     
 
