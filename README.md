@@ -1,4 +1,4 @@
-# O1 Hack
+# Open-vocabulary multi-turn image editing
 [Slides](https://docs.google.com/presentation/d/1GyGrWMpq7Kzc2n2uifNeCmBtPKvre8IWLGiZw1PwzCM/edit?usp=sharing)
 # Steps
 
