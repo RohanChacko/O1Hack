@@ -1,5 +1,5 @@
 # O1 Hack
-![Slides](https://docs.google.com/presentation/d/1GyGrWMpq7Kzc2n2uifNeCmBtPKvre8IWLGiZw1PwzCM/edit?usp=sharing)
+[Slides](https://docs.google.com/presentation/d/1GyGrWMpq7Kzc2n2uifNeCmBtPKvre8IWLGiZw1PwzCM/edit?usp=sharing)
 # Steps
 
 1. Edit the prompt in `o1_prompt.txt` at `Line 6` to generate a response from gpt-o1-preview for a particular image editing task.
